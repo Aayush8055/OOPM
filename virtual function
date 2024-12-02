@@ -1,0 +1,55 @@
+#include<iostream>
+using namespace std;
+
+class shape{
+    protected:
+    int length,width;
+
+    public:
+    virtual void drow(){
+        cout<<"base shape drown\n";
+    }
+};
+
+class rectangle:public shape
+{
+    public:
+    rectangle(int l,int w){
+        length=l;
+        width=w;
+    }
+    void drow(){
+        cout<<"rectangle drown with : "<<length  <<"  &  "  <<width<<endl;
+    }
+};
+
+ class circle: public shape{
+    int rad;
+    public:
+    circle (int r)
+    {
+        rad=r;
+    }
+
+    void drow()
+    {
+        cout<<"circle drown with rad="<<rad<<endl;
+    }
+ };
+ 
+ int main(){
+    shape *ptr;
+    rectangle rect(5,7);
+    ptr=&rect;
+    ptr->drow();
+    
+    circle c(5);
+    ptr=&c;
+    ptr->drow();
+ }
+ 
+ 
+ 
+ 
+ 
+ 
